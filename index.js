@@ -70,7 +70,7 @@ app.post('/:id', function(request, response) {
         try {
             user.ResolveVanityUrl(request.params.id).done(function(resultVanity){
                 console.log(resultVanity);
-                if (resultVanity.match(/^[0-9]{17}$/g)) {
+                if (resultVanity !== undefined) {
                     // Make api calls with converted vanity id (resultVanity)
                     getStats(resultVanity, response);
                 }
