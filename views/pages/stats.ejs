@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSGOSTAT</title>
+    <link rel="stylesheet" href="/stylesheets/stats.css">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="bg"></div>
+<!-- Make loading animation -->
+<div id="loader">
+    <div class="container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <span id="loadingText"></span>
+</div>
+
+
+<script>
+    let loadingTextArr = ['loading...', 'scattering salt...', 'getting data...', 'contacting valve...'];
+    document.getElementById('loadingText').innerText = loadingTextArr[Math.floor(Math.random() * loadingTextArr.length)];
+    // Make ajax POST request to /u/:id
+    // Display all stats on page
+    $.ajax({
+        type: 'POST',
+        contentType: 'application/json',
+        url: $(location).attr('href'),
+        success: function(data) {
+            console.log(data);
+        }
+    });
+</script>
+</body>
+</html>
