@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let SteamApi = require('steam-api');
+let compression = require('compression');
 
 let user = new SteamApi.User('43CA0605468900BF447A80689C0B0A8B');
 let userStats = new SteamApi.UserStats('43CA0605468900BF447A80689C0B0A8B');
@@ -9,6 +10,7 @@ let player = new SteamApi.Player('43CA0605468900BF447A80689C0B0A8B');
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
+app.use(compression());
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
