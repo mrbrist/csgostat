@@ -31,7 +31,9 @@ function getStats(id, response) {
             if(result730.length > 0){
                 user.GetPlayerSummaries(id).done(function(resultSummary){
                     userStats.GetUserStatsForGame(730, id).done(function(resultStats){
-                        response.json({'error':false, 'summ':resultSummary, 'stats':resultStats});
+                        user.GetPlayerBans(id).done(function(resultBans){
+                            response.json({'error':false, 'summ':resultSummary, 'stats':resultStats, 'bans':resultBans});
+                        });
                     });
                 });
             }else{
