@@ -35,7 +35,6 @@ function getStats(id, response) {
                     });
                 });
             }else{
-                // TODO: Render error page instead of redirecting
                 response.json({'error':true});
             }
         });
@@ -75,7 +74,6 @@ app.post('/:id', function(request, response) {
                     getStats(resultVanity, response);
                 }
                 else {
-                    // TODO: Render error page instead of redirecting
                     response.json({'error':true});
                 }
             });
@@ -90,7 +88,6 @@ app.post('/:id', function(request, response) {
             getStats(request.params.id, response);
         }
         catch(err) {
-            // TODO: Render error page instead of redirecting
             response.json({'error':true});
         }
     }
