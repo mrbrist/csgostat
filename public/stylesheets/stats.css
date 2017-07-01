@@ -86,3 +86,43 @@ body {
         opacity: 0;
     }
 }
+
+#main {
+    display: none;
+}
+#mainHeader {
+    background-color: rgba(52, 73, 94,0.5);
+    height: 6.250em;
+    padding: 1em 1em 1em 1em;
+    position: relative;
+}
+#mainAvatar {
+    height: 6.250em;
+    width: auto;
+}
+#profileData {
+    width: calc(100% - 6.250em);
+    float: right;
+}
+#mainName {
+    color: #FFFFFF;
+    font-size: 3em;
+    font-weight: 100;
+    padding-left: 0.3em;
+}
+#more {
+    padding-left: 1.5em;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 0.75em;
+    padding-bottom: 0.75em;
+}
+#mainProfileLink {
+    color: #FFFFFF;
+}
+#onlineState {
+    font-size: 3em;
+    font-weight: 100;
+    padding-left: 0.3em;
+    float: right;
+}
